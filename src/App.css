@@ -50,4 +50,10 @@
 .response{
   max-width: 500px;
   display: inline-grid;
+  text-align: justify;
+  border-color: black;
+  border-width: medium;
+  border-style: groove;
+  margin-top: 5px;
+  padding: 10px;
 }

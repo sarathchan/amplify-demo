@@ -52,7 +52,7 @@ function App() {
         Chat Support
       </h1>
       <div className='input'>
-        <InputLabel id="demo-simple-select-helper-label">Question Type</InputLabel>
+        <InputLabel id="demo-simple-select-helper-label">Select Team</InputLabel>
 
         <Select
         className='select'
@@ -61,7 +61,6 @@ function App() {
           value={firstname}
           onChange={(e) => setFirstName(e.target.value)}
           autoWidth
-          label="Question Type"
 
         >
 
@@ -92,16 +91,21 @@ function App() {
         onClick={handleClick}
         loading={loading}
       >
-        Search
+        Ask
       </LoadingButton>
         {/* <Button onClick={handleClick} variant="contained">Search</Button> */}
 </div>
+{
+  Response != "" ? 
+
         <div className='response'>
 
         <p >
           {Response}
         </p>
-        </div>
+        </div> :
+        <></>
+}
       </div>
 
 
