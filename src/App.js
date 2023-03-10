@@ -6,6 +6,8 @@ import Button from '@mui/material/Button';
 import MenuItem from '@mui/material/MenuItem';
 import InputLabel from '@mui/material/InputLabel';
 import TextField from '@mui/material/TextField';
+import SearchIcon from '@mui/icons-material/Search';
+import LoadingButton from '@mui/lab/LoadingButton';
 import Select, { SelectChangeEvent } from '@mui/material/Select';
 
 function App() {
@@ -13,10 +15,14 @@ function App() {
   const [LastName, setLastName] = useState("")
   const [Dob, setDob] = useState("")
   const [Response, setResponse] = useState("")
+  const [loading, setLoading] = useState(false);
 
 
 
   const handleClick = () => {
+    setResponse("")
+    setLoading(true);
+    
     const URL = 'https://xqqbxnn2kk4vhyqkrinahgyoa40swxwv.lambda-url.us-east-1.on.aws/'
     let body = {
       "question_type": firstname,
@@ -32,6 +38,8 @@ function App() {
         )
       .then((res) => {
         console.log(res)
+        setLoading(false);
+        
         setResponse(res.data.response)
       })
       .catch((err) => {
@@ -76,8 +84,17 @@ function App() {
           </div>
           <div className='login-btn'> */}
 <div>
-
-        <Button onClick={handleClick} variant="contained">Search</Button>
+<LoadingButton
+        
+        loadingPosition="start"
+        startIcon={<SearchIcon />}
+        variant="contained"
+        onClick={handleClick}
+        loading={loading}
+      >
+        Search
+      </LoadingButton>
+        {/* <Button onClick={handleClick} variant="contained">Search</Button> */}
 </div>
         <div className='response'>
 
