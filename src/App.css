@@ -1,4 +1,5 @@
 .App {
+  margin-top: 100px;
   text-align: center;
 }
 
@@ -35,4 +36,18 @@
   to {
     transform: rotate(360deg);
   }
+}
+.login-btn{
+  margin-top: 10px;
+  margin-bottom: 10px;
+}
+.input{ 
+  margin-top: 10px;
+}
+.select{
+  min-width: 220px;
+}
+.response{
+  max-width: 500px;
+  display: inline-grid;
 }
