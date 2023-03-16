@@ -28,6 +28,7 @@ function App() {
       "question_type": firstname,
       "question": LastName
     }
+    
     let header = {
       "Content-Type": "application/json",
       "Access-Control-Allow-Origin": "*"
@@ -67,6 +68,7 @@ function App() {
           <MenuItem value='salesforce-developer'>Ask to Salesforce Team</MenuItem>
           <MenuItem value='aws'>Ask to AWS Digital team</MenuItem>
           <MenuItem value='solution-arch'>Ask to Solution Architect</MenuItem>
+          <MenuItem value='personal-agent'>Ask to Insurance Agent</MenuItem>
         </Select>
       </div>
       <div className='input'>
