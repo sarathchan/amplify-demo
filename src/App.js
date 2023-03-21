@@ -4,6 +4,7 @@ import { useState } from 'react'
 import axios from "axios";
 import Button from '@mui/material/Button';
 import MenuItem from '@mui/material/MenuItem';
+import FormControl from '@mui/material/FormControl';
 import InputLabel from '@mui/material/InputLabel';
 import TextField from '@mui/material/TextField';
 import SearchIcon from '@mui/icons-material/Search';
@@ -53,13 +54,15 @@ function App() {
         Chat Support
       </h1>
       <div className='input'>
+      <FormControl sx={{ minWidth: 220, m: 1 }}>
         <InputLabel id="demo-simple-select-helper-label">Select Team</InputLabel>
 
         <Select
         className='select'
-          labelId="demo-simple-select-autowidth-label"
-          id="demo-simple-select-helper"
+        labelId="demo-simple-select-helper-label"
+                  id="demo-simple-select-helper"
           value={firstname}
+          label="Select Team"
           onChange={(e) => setFirstName(e.target.value)}
           autoWidth
 
@@ -69,7 +72,10 @@ function App() {
           <MenuItem value='aws'>Ask to AWS Digital team</MenuItem>
           <MenuItem value='solution-arch'>Ask to Solution Architect</MenuItem>
           <MenuItem value='personal-agent'>Ask to Insurance Agent</MenuItem>
+          <MenuItem value='mail'>Mail Analyse</MenuItem>
+          <MenuItem value='contact-centre-agent'>Talk to Contact Centre</MenuItem>
         </Select>
+        </FormControl>
       </div>
       <div className='input'>
 
