@@ -68,10 +68,13 @@ const Bot = () => {
       </h1>
       <div className='input'>
       <FormControl sx={{ minWidth: 220, m: 1 }}>
-        <InputLabel id="demo-simple-select-helper-label">Select Team</InputLabel>
+        <InputLabel 
+        style={{color:'white'}} id="demo-simple-select-helper-label">Select Team</InputLabel>
 
         <Select
         className='select'
+        
+        style={{color:'white'}}
         labelId="demo-simple-select-helper-label"
                   id="demo-simple-select-helper"
           value={firstname}
@@ -90,9 +93,11 @@ const Bot = () => {
         </Select>
         </FormControl>
       </div>
-      <div className='input'>
+      <div className='input' 
+        style={{color:'white'}}>
 
-        <TextField id="outlined-basic" label="Enter Question" placeholder='Enter Question'
+        <TextField id="outlined-basic" 
+        style={{color:'white'}} label="Enter Question" placeholder='Enter Question'
           onChange={(e) => setLastName(e.target.value)} />
       </div>
       <div className='input'>
