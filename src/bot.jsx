@@ -9,10 +9,10 @@ import InputLabel from '@mui/material/InputLabel';
 import TextField from '@mui/material/TextField';
 import SearchIcon from '@mui/icons-material/Search';
 import LoadingButton from '@mui/lab/LoadingButton';
-import Select, { SelectChangeEvent } from '@mui/material/Select';
+import NativeSelect, { SelectChangeEvent } from '@mui/material/Select';
 
 const Bot = () => {
-    const [firstname, setFirstName] = useState("")
+    const [firstname, setFirstName] = useState("salesforce-developer")
     const [LastName, setLastName] = useState("")
     const [Dob, setDob] = useState("")
     const [Response, setResponse] = useState([])
@@ -68,17 +68,16 @@ const Bot = () => {
       </h1>
       <div className='input'>
       <FormControl sx={{ minWidth: 220, m: 1 }}>
-        <InputLabel 
-        style={{color:'white'}} id="demo-simple-select-helper-label">Select Team</InputLabel>
+        {/* <InputLabel        style={{color:'black'}} id="demo-simple-select-helper-label">Select Option</InputLabel> */}
 
-        <Select
-        className='select'
-        
-        style={{color:'white'}}
+        <NativeSelect
+        // className='select'
+        className = "textfield"
+        // style={{color:'white'}}
         labelId="demo-simple-select-helper-label"
                   id="demo-simple-select-helper"
           value={firstname}
-          label="Select Team"
+          // label="Select Option"
           onChange={(e) => setFirstName(e.target.value)}
           autoWidth
 
@@ -90,14 +89,18 @@ const Bot = () => {
           <MenuItem value='personal-agent'>Ask to Insurance Agent</MenuItem>
           <MenuItem value='mail'>Mail Analyse</MenuItem>
           <MenuItem value='contact-centre-agent'>Talk to Contact Centre</MenuItem>
-        </Select>
+        </NativeSelect>
         </FormControl>
       </div>
-      <div className='input' 
-        style={{color:'white'}}>
+      <div className='input'>
 
-        <TextField id="outlined-basic" 
-        style={{color:'white'}} label="Enter Question" placeholder='Enter Question'
+        <TextField sx={{ minWidth: 220, m: 1 }}  id="filled-multiline-static"
+          multiline
+          rows={4}
+          variant="filled"
+        className='textfield'
+        label="Enter Question" 
+        placeholder='Enter Question'
           onChange={(e) => setLastName(e.target.value)} />
       </div>
       <div className='input'>
